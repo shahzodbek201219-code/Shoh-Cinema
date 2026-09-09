@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoh Cinema</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0f;
+      color: white;
+    }
+
+    header {
+      background: #15151c;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #292933;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff3333;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #ff3333;
+    }
+
+    .hero {
+      padding: 80px 7%;
+      background: linear-gradient(135deg, #191923, #0b0b0f);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #e50914;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 40px 7%;
+    }
+
+    .section h2 {
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .movie {
+      background: #17171e;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .movie:hover {
+      transform: translateY(-5px);
+    }
+
+    .poster {
+      height: 250px;
+      background: linear-gradient(135deg, #333, #111);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .movie-info {
+      padding: 15px;
+    }
+
+    .movie-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .movie-info p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      background: #15151c;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">SHOH CINEMA</div>
+
+    <nav>
+      <a href="#">Bosh sahifa</a>
+      <a href="#movies">Kinolar</a>
+      <a href="#cartoons">Multfilmlar</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>SHOH CINEMA</h1>
+    <p>Eng sara kinolar va multfilmlar olamiga xush kelibsiz!</p>
+    <a href="#movies" class="button">Kinolarni ko‘rish</a>
+  </section>
+
+  <section class="section" id="movies">
+    <h2>🎬 Yangi kinolar</h2>
+
+    <div class="movies">
+
+      <div class="movie">
+        <div class="poster">Poster</div>
+        <div class="movie-info">
+          <h3>Kino 1</h3>
+          <p>2026 • HD</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Poster</div>
+        <div class="movie-info">
+          <h3>Kino 2</h3>
+          <p>2026 • HD</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Poster</div>
+        <div class="movie-info">
+          <h3>Kino 3</h3>
+          <p>2026 • HD</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Poster</div>
+        <div class="movie-info">
+          <h3>Kino 4</h3>
+          <p>2026 • HD</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="cartoons">
+    <h2>🧸 Multfilmlar</h2>
+
+    <div class="movies">
+
+      <div class="movie">
+        <div class="poster">Multfilm</div>
+        <div class="movie-info">
+          <h3>Multfilm 1</h3>
+          <p>HD • O‘zbek tilida</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Multfilm</div>
+        <div class="movie-info">
+          <h3>Multfilm 2</h3>
+          <p>HD • O‘zbek tilida</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Multfilm</div>
+        <div class="movie-info">
+          <h3>Multfilm 3</h3>
+          <p>HD • O‘zbek tilida</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Shoh Cinema
+  </footer>
+
+</body>
+</html>
