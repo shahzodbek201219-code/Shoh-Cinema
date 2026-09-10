@@ -1,3 +1,229 @@
-<a href="spiderman.html" class="watch">
-    Ko‘rish
-</a>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spider-Man: No Way Home — Shoh Cinema</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+}
+
+header {
+    background: #111116;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff2020;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff3030;
+}
+
+.movie-page {
+    padding: 50px 6%;
+}
+
+.back {
+    display: inline-block;
+    color: #ff3030;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.movie-content {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+}
+
+.poster {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.poster img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.info {
+    padding-top: 10px;
+}
+
+.info h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffc400;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.meta {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.watch-button {
+    display: inline-block;
+    background: #e51b23;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.video {
+    margin-top: 50px;
+    max-width: 1000px;
+}
+
+.video h2 {
+    margin-bottom: 20px;
+}
+
+.video-box {
+    background: #15151b;
+    border-radius: 10px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #888;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: #111116;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 700px) {
+    .movie-content {
+        flex-direction: column;
+    }
+
+    .poster {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .info h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        SHOH CINEMA
+    </div>
+
+    <nav>
+        <a href="index.html">Bosh sahifa</a>
+        <a href="index.html#kinolar">Kinolar</a>
+        <a href="index.html#multfilmlar">Multfilmlar</a>
+    </nav>
+
+</header>
+
+<section class="movie-page">
+
+    <a href="index.html" class="back">
+        ← Orqaga
+    </a>
+
+    <div class="movie-content">
+
+        <div class="poster">
+
+            <img
+            src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+            alt="Spider-Man No Way Home">
+
+        </div>
+
+        <div class="info">
+
+            <h1>Spider-Man: No Way Home</h1>
+
+            <div class="rating">
+                ⭐ 8.2
+            </div>
+
+            <div class="meta">
+                2021 • Fantastika • HD
+            </div>
+
+            <p class="description">
+                Spider-Man: No Way Home — Piter Parkerning
+                hayoti va superqahramonlik sarguzashtlari
+                haqida fantastik film.
+            </p>
+
+            <a href="#video" class="watch-button">
+                ▶ Filmni ko‘rish
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="video" id="video">
+
+        <h2>🎬 Spider-Man: No Way Home</h2>
+
+        <div class="video-box">
+            Bu yerga film videosi joylashtiriladi.
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Shoh Cinema — Barcha huquqlar himoyalangan.
+</footer>
+
+</body>
+</html>
