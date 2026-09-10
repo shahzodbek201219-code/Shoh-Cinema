@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Avatar — Shoh Cinema</title>
+<title>Shoh Cinema — Kino va Multfilmlar</title>
 
 <style>
 * {
@@ -25,6 +25,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -37,119 +40,202 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
+    font-weight: bold;
 }
 
 nav a:hover {
     color: #ff3030;
 }
 
-.movie-page {
-    padding: 50px 6%;
+.hero {
+    min-height: 430px;
+    padding: 100px 6%;
+    background:
+        linear-gradient(90deg, #08080b 15%, rgba(8,8,11,.7), rgba(8,8,11,.2)),
+        url("https://image.tmdb.org/t/p/original/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.back {
+.hero h1 {
+    font-size: 52px;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #ff2525;
+}
+
+.hero p {
+    color: #ccc;
+    max-width: 550px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn {
     display: inline-block;
+    background: #e51b23;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.btn.gray {
+    background: #33333b;
+}
+
+.search {
+    padding: 30px 6%;
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 7px;
+    border: none;
+    background: #202027;
+    color: white;
+    outline: none;
+}
+
+.search button {
+    padding: 0 25px;
+    border: none;
+    border-radius: 7px;
+    background: #e51b23;
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    padding: 25px 6% 50px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+.section-title a {
     color: #ff3030;
     text-decoration: none;
-    margin-bottom: 30px;
 }
 
-.movie-content {
-    display: flex;
-    gap: 40px;
-    max-width: 1100px;
+.movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.movie {
+    background: #15151b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.movie:hover {
+    transform: translateY(-6px);
 }
 
 .poster {
-    width: 300px;
-    flex-shrink: 0;
+    height: 280px;
+    overflow: hidden;
+    background: #25252d;
 }
 
 .poster img {
     width: 100%;
-    border-radius: 12px;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.info {
-    padding-top: 10px;
+.movie-info {
+    padding: 15px;
 }
 
-.info h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.rating {
-    color: #ffc400;
-    font-size: 18px;
-    margin-bottom: 20px;
+.movie-info h3 {
+    margin-bottom: 10px;
 }
 
 .meta {
     color: #aaa;
-    margin-bottom: 25px;
+    font-size: 14px;
+    margin-bottom: 12px;
 }
 
-.description {
-    color: #ccc;
-    line-height: 1.7;
-    max-width: 650px;
-    margin-bottom: 25px;
-}
-
-.watch-button {
+.watch {
     display: inline-block;
     background: #e51b23;
     color: white;
     text-decoration: none;
-    padding: 13px 25px;
-    border-radius: 7px;
-    font-weight: bold;
+    padding: 9px 15px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-.video {
-    margin-top: 50px;
-    max-width: 1000px;
-}
-
-.video h2 {
-    margin-bottom: 20px;
-}
-
-.video-box {
-    background: #15151b;
-    border-radius: 10px;
-    padding: 60px 20px;
-    text-align: center;
-    color: #888;
+.rating {
+    color: #ffc400;
+    margin-bottom: 10px;
 }
 
 footer {
-    margin-top: 60px;
+    text-align: center;
     padding: 30px;
     background: #111116;
-    text-align: center;
     color: #777;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+    .movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-    .movie-content {
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
         flex-direction: column;
-    }
-
-    .poster {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .info h1 {
-        font-size: 32px;
+        gap: 15px;
     }
 
     nav a {
-        margin-left: 10px;
+        margin: 0 7px;
+        font-size: 14px;
+    }
+
+    .movies {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .poster {
+        height: 250px;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
     }
 }
 </style>
@@ -159,78 +245,252 @@ footer {
 
 <header>
 
-    <div class="logo">
-        SHOH CINEMA
-    </div>
+    <div class="logo">SHOH CINEMA</div>
 
     <nav>
         <a href="index.html">Bosh sahifa</a>
-        <a href="index.html#kinolar">Kinolar</a>
-        <a href="index.html#multfilmlar">Multfilmlar</a>
+        <a href="#kinolar">Kinolar</a>
+        <a href="#multfilmlar">Multfilmlar</a>
     </nav>
 
 </header>
 
+<section class="hero">
 
-<section class="movie-page">
+    <h1>
+        Kino olamiga
+        <span>xush kelibsiz!</span>
+    </h1>
 
-    <a href="index.html" class="back">
-        ← Orqaga
-    </a>
+    <p>
+        Eng sara kinolar va multfilmlarni bir joyda tomosha qiling.
+        Yangi filmlar va mashhur multfilmlar siz uchun.
+    </p>
 
+    <a href="#kinolar" class="btn">🎬 Kinolarni ko‘rish</a>
 
-    <div class="movie-content">
+    <a href="#multfilmlar" class="btn gray">🍿 Multfilmlar</a>
 
-        <div class="poster">
+</section>
 
-            <img
-            src="https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg"
-            alt="Avatar">
+<div class="search">
 
-        </div>
+    <input
+        type="text"
+        placeholder="🔍 Kino yoki multfilm qidiring..."
+    >
 
+    <button>Qidirish</button>
 
-        <div class="info">
+</div>
 
-            <h1>Avatar</h1>
+<section id="kinolar">
 
-            <div class="rating">
-                ⭐ 8.5
-            </div>
+    <div class="section-title">
 
-            <div class="meta">
-                2009 • Fantastika • HD
-            </div>
+        <h2>🔥 Yangi kinolar</h2>
 
-            <p class="description">
-                Avatar — uzoq kelajakda Pandora sayyorasida
-                sodir bo‘ladigan fantastik sarguzasht filmi.
-                Jeyk Salli Pandora dunyosiga borib, u yerdagi
-                xalq va tabiat bilan bog‘liq katta voqealarga
-                duch keladi.
-            </p>
-
-            <a href="#video" class="watch-button">
-                ▶ Filmni ko‘rish
-            </a>
-
-        </div>
+        <a href="#">Barchasini ko‘rish →</a>
 
     </div>
 
+    <div class="movies">
 
-    <div class="video" id="video">
+        <!-- AVATAR -->
 
-        <h2>🎬 Avatar — Film</h2>
+        <div class="movie">
 
-        <div class="video-box">
-            Bu yerga film videosi joylashtiriladi.
+            <div class="poster">
+
+                <img
+                src="https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg"
+                alt="Avatar">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Avatar</h3>
+
+                <div class="rating">⭐ 8.5</div>
+
+                <div class="meta">
+                    2009 • Fantastika • HD
+                </div>
+
+                <a href="avatar.html" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SPIDER-MAN -->
+
+        <div class="movie">
+
+            <div class="poster">
+
+                <img
+                src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+                alt="Spider-Man No Way Home">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Spider-Man: No Way Home</h3>
+
+                <div class="rating">⭐ 8.2</div>
+
+                <div class="meta">
+                    2021 • Fantastika • HD
+                </div>
+
+                <a href="#" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- MOANA 2 -->
+
+        <div class="movie">
+
+            <div class="poster">
+
+                <img
+                src="https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+                alt="Moana 2">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Moana 2</h3>
+
+                <div class="rating">⭐ 7.0</div>
+
+                <div class="meta">
+                    2024 • Sarguzasht • HD
+                </div>
+
+                <a href="#" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- KUNG FU PANDA 4 -->
+
+        <div class="movie">
+
+            <div class="poster">
+
+                <img
+                src="https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/blt6e141555629644b7/693390d4c039e66219300868/KungFuPanda4_Digital_Poster.jpg?width=2560"
+                alt="Kung Fu Panda 4">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Kung Fu Panda 4</h3>
+
+                <div class="rating">⭐ 7.0</div>
+
+                <div class="meta">
+                    2024 • Multfilm • HD
+                </div>
+
+                <a href="#" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
 
+<section id="multfilmlar">
+
+    <div class="section-title">
+
+        <h2>🎨 Multfilmlar</h2>
+
+        <a href="#">Barchasini ko‘rish →</a>
+
+    </div>
+
+    <div class="movies">
+
+        <div class="movie">
+
+            <div class="poster">
+
+                <img
+                src="https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+                alt="Multfilm">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Yangi multfilm</h3>
+
+                <div class="rating">⭐ 8.0</div>
+
+                <div class="meta">
+                    2024 • Multfilm • HD
+                </div>
+
+                <a href="#" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="movie">
+
+            <div class="poster">
+
+                <img
+                src="https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+                alt="Multfilm">
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Oilaviy multfilm</h3>
+
+                <div class="rating">⭐ 8.3</div>
+
+                <div class="meta">
+                    2024 • Multfilm • HD
+                </div>
+
+                <a href="#" class="watch">
+                    Ko‘rish
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <footer>
 
@@ -239,6 +499,4 @@ footer {
 </footer>
 
 </body>
-</html><a href="avatar.html" class="watch">
-    Ko‘rish
-</a>
+</html>
