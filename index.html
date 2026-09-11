@@ -246,10 +246,12 @@ footer {
 }
 
 .category-list {
-  display: flex !important;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
+
+
 
 .category-list a {
   display: block;
