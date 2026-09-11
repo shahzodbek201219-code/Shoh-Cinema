@@ -239,33 +239,39 @@ footer {
     }
 .categories {
   margin: 30px 0;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #160606, #1a1010, #100707);
+  box-shadow: 0 0 25px rgba(255, 40, 20, 0.15);
 }
 
 .categories h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.categories a {
-  display: inline-block;
-  padding: 10px 18px;
-  margin: 5px;
-  background: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 8px;
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.category-list a {
+  padding: 9px 12px;
+  background: linear-gradient(135deg, #191919, #252020);
+  border: 1px solid #3d2929;
+  border-radius: 7px;
   color: white;
   text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-.categories a:hover {
-  background: #333;
+.category-list a:hover {
+  background: linear-gradient(135deg, #e50914, #ff4d00);
+  box-shadow: 0 0 12px rgba(255, 60, 20, 0.5);
+  transform: translateY(-2px);
 }
-</style>
-</head>
-
-<body>
-
-<header>
-
     <div class="logo">SHOH CINEMA</div>
 
     <nav>
