@@ -246,27 +246,24 @@ footer {
 }
 
 .category-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex !important;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .category-list a {
-  padding: 10px 12px;
-  background: linear-gradient(135deg, #191919, #252020);
+  display: block;
+  padding: 10px 15px;
+  background: #191919;
   border: 1px solid #3d2929;
-  border-radius: 7px;
+  border-radius: 8px;
   color: white;
   text-decoration: none;
-  text-align: center;
   font-size: 14px;
-  transition: 0.2s;
 }
 
 .category-list a:hover {
-  background: linear-gradient(135deg, #e50914, #ff4d00);
-  box-shadow: 0 0 12px rgba(255, 60, 20, 0.5);
-  transform: translateY(-2px);
+  background: #e50914;
 }
 </style>
 
