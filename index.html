@@ -249,7 +249,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  }  
+}
+
 .category-list a {
   padding: 10px 12px;
   background: linear-gradient(135deg, #191919, #252020);
@@ -260,8 +261,14 @@ footer {
   text-align: center;
   font-size: 14px;
   transition: 0.2s;
-
 }
+
+.category-list a:hover {
+  background: linear-gradient(135deg, #e50914, #ff4d00);
+  box-shadow: 0 0 12px rgba(255, 60, 20, 0.5);
+  transform: translateY(-2px);
+}
+</style>
 
 .category-list a:hover {
   background: linear-gradient(135deg, #e50914, #ff4d00);
